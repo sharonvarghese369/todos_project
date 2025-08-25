@@ -19,91 +19,34 @@
         <!-- nav header-->
         <nav class="flex w-full h-35 py-6 text-8xl text-[#B22222]  justify-center">todos</nav>
         <!-- hero section -->
-        <div class="pl-[200px] justify-center w-full h-125">
+        <div class="pl-[600px] justify-center w-full h-125">
             <!-- input div -->
-            <div class="flex bg-white h-17 w-135 rounded-none shadow-2xl">
-                <input class="w-135 placeholder-gray-400 px-15 text-2xl italic border border-transparent focus:border-[#B22222] focus:shadow-[0_0_8px_#B22222] focus:outline-none transition-all"
+            <form id="inputcontent" class="bg-white h-17 w-135 rounded-none shadow-2xl">
+                  <input id="userinput" class="w-135 placeholder-gray-400 px-15 py-3 text-2xl italic border border-transparent focus:border-[#B22222] focus:shadow-[0_0_8px_#B22222] focus:outline-none transition-all"
                     type="text" 
                     placeholder="What needs to be done?">
-            </div>
-            <div class="bg-white flex gap-7">
+
+            </form>
+            <input class="bg-white h-17 w-135 rounded-none shadow-2xl">
+            <div class="bg-gray-100 rounded shadow-2xl w-135 flex gap-7">
                <h1 class="font-semibold">1 item left</h1>
                <button class="border border-transparent hover:border-2 hover:border-red-400 border-2 rounded px-2 font-semibold focus:shadow-[0_0_8px_#B22222] focus:outline-none hover">All</button>
                <button class="border border-transparent hover:border-2 hover:border-red-400 border-2 rounded px-2 font-semibold focus:shadow-[0_0_8px_#B22222] focus:outline-none hover">Active</button>
                <button class="border border-transparent hover:border-2 hover:border-red-400 border-2 rounded px-2 font-semibold focus:shadow-[0_0_8px_#B22222] focus:outline-none hover">Completed</button>
             </div>
+            <a class="pl-[220px]" href="profile.html"><button class="pl-[] border border-red-400 rounded">Click hear</button></a>
         </div>
+        
      </div>
      <!-- footer -->
-             <footer class="flex flex-col absolute top-70 w-full items-center justify-center font-semibold text-sm text-gray-700 gap-1">
+             <footer class="flex flex-col absolute top-85 w-full items-center justify-center font-semibold text-sm text-gray-700 gap-1">
                 <P>Double click to edit a todo</P>
                 <p>Created by the TodoMVC Team</p>
                 <p>Part of TodoMVC</p>
              </footer>
-    </div>
-<!-- 
-    <script>
-  let todos = [];
-
-  const input = document.querySelector("input");
-  const todoContainer = document.createElement("ul");
-  const footer = document.querySelector("footer");
-  const itemLeftText = document.querySelector("h1");
-  const allBtn = document.querySelectorAll("button")[0];
-  const activeBtn = document.querySelectorAll("button")[1];
-  const completedBtn = document.querySelectorAll("button")[2];
-
-  // Inject todo list container
-  input.parentElement.after(todoContainer);
-
-  function updateTodoList(filter = "all") {
-    todoContainer.innerHTML = "";
-
-    const filteredTodos = todos.filter(todo => {
-      if (filter === "active") return !todo.completed;
-      if (filter === "completed") return todo.completed;
-      return true;
-    });
-
-    filteredTodos.forEach((todo, index) => {
-      const li = document.createElement("li");
-      li.textContent = todo.text;
-      li.className = `text-xl py-1 cursor-pointer ${
-        todo.completed ? "line-through text-gray-400" : ""
-      }`;
-      li.onclick = () => {
-        todos[index].completed = !todos[index].completed;
-        updateTodoList(filter);
-        updateItemsLeft();
-      };
-      todoContainer.appendChild(li);
-    });
-  }
-
-  function updateItemsLeft() {
-    const count = todos.filter(todo => !todo.completed).length;
-    itemLeftText.textContent = `${count} item${count !== 1 ? "s" : ""} left`;
-  }
-
-  input.addEventListener("keypress", (e) => {
-    if (e.key === "Enter" && input.value.trim() !== "") {
-      todos.push({ text: input.value.trim(), completed: false });
-      input.value = "";
-      updateTodoList();
-      updateItemsLeft();
-    }
-  });
-
-  // Filter button handlers
-  allBtn.onclick = () => updateTodoList("all");
-  activeBtn.onclick = () => updateTodoList("active");
-  completedBtn.onclick = () => updateTodoList("completed");
-
-  // Initial setup
-  updateTodoList();
-</script> -->
-
-<script src="todos.js"></script>
+    </div> 
+ 
+<script src="script.js"></script>
 
 
 </body>
